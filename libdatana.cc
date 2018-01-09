@@ -1,4 +1,4 @@
-#include "libdatana.h"
+#include "libdatana.hh"
 
 void datana(double *datos, int N, double *resultados, int n_sigmas, bool chau)
 {

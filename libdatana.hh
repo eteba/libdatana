@@ -1,4 +1,4 @@
-#include "root/TMath.h"
+#include "TMath.h"
 
 /*
  * Función "datana".

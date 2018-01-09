@@ -11,6 +11,7 @@ SRCS     := $(NAME).cc
 CXXFLAGS += -std=gnu++11 -fPIC -g -c -Wall
 LDFLAGS  += -shared -Wl,-soname,$(TARGET).$(MAJOR)
 LDLIBS   += -lc
+INCDIR   += `root-config --incdir`
 
 DESTDIR  = /
 hdrdir   := $(DESTDIR)usr/local/include
@@ -20,7 +21,7 @@ $(TARGET) : $(OBJECTS)
 	$(CXX) $(LDFLAGS) -o $(TARGET).$(MAJOR).$(MINOR).$(RELEASE) $(OBJECTS) $(LDLIBS)
 
 $(OBJECTS) : $(SRCS)
-	$(CXX) $(CXXFLAGS) $(SRCS)
+	$(CXX) $(CXXFLAGS) $(SRCS) -I$(INCDIR)
 
 .PHONY: clean
 clean :
