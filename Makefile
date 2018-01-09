@@ -31,7 +31,7 @@ clean :
 install :
 	mkdir -p $(hdrdir) $(libdir)
 	rm -f $(libdir)/$(TARGET)*
-	install -m 0755 $(NAME).h $(hdrdir)
+	install -m 0755 $(NAME).hh $(hdrdir)
 	install -m 0755 $(TARGET).$(MAJOR).$(MINOR).$(RELEASE) $(libdir)
 	ln -s $(libdir)/$(TARGET).$(MAJOR).$(MINOR).$(RELEASE) $(libdir)/$(TARGET).$(MAJOR)
 	ln -s $(libdir)/$(TARGET).$(MAJOR).$(MINOR).$(RELEASE) $(libdir)/$(TARGET)
@@ -42,4 +42,4 @@ install :
 
 .PHONY: uninstall
 uninstall :
-	rm $(hdrdir)/$(NAME).h $(libdir)/$(TARGET)* -v
+	rm $(hdrdir)/$(NAME).hh $(libdir)/$(TARGET)* -v
